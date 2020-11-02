@@ -66,13 +66,13 @@ object StreamingDataFrames {
       .trigger(
         // Trigger.ProcessingTime(2.seconds) // every 2 seconds run the query
         // Trigger.Once() // single batch, then terminate
-        Trigger.Continuous(2.seconds) // experimental, every 2 seconds create a batch with whatever you have
+      Trigger.Continuous(2.seconds) // experimental, every 2 seconds create a batch with whatever you have
       )
       .start()
       .awaitTermination()
   }
 
   def main(args: Array[String]): Unit = {
-    demoTriggers()
+  //  demoTriggers()
   }
 }
