@@ -51,8 +51,8 @@ object StreamingDatasets {
     * (use complete output mode)
     * 3)count the cars by origin field
     */
-    def countCars()= {
-      val carsDS = readCars()
+  def countCars()= {
+    val carsDS = readCars()
       carsDS.filter(_.Horsepower.getOrElse(0L) > 140)
         .writeStream
         .format("console")
@@ -68,9 +68,9 @@ object StreamingDatasets {
       .outputMode("complete")
       .start()
       .awaitTermination()
-  }
+    }
   def ex3()={
-   val carsDS=readCars()
+    val carsDS=readCars()
     val carsCountByOrigin=carsDS.groupBy(col("Origin")).count() //option  1
       val carsCountByOriginAlt=carsDS.groupByKey(car=>car.Origin).count() //option 2 with dataset api
 
@@ -81,6 +81,7 @@ object StreamingDatasets {
       .start()
       .awaitTermination()
   }
+
   def main(args: Array[String]): Unit = {
     ex3()
    }
