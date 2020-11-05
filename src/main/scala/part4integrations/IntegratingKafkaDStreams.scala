@@ -82,7 +82,6 @@ object IntegratingKafkaDStreams {
     ssc.awaitTermination()
   }
 
-
   def main(args: Array[String]): Unit = {
     writeToKafka()
   }
