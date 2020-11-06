@@ -1,12 +1,14 @@
 package part5twitterproject
 
 import java.util.Properties
-import scala.collection.JavaConverters._
+
 import edu.stanford.nlp.ling.CoreAnnotations
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations
 import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations
 import edu.stanford.nlp.util.CoreMap
+
+import scala.collection.JavaConverters._
 
 object SentimentAnalysis {
 
