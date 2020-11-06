@@ -43,6 +43,13 @@ libraryDependencies ++= Seq(
   // postgres
   "org.postgresql" % "postgresql" % postgresVersion,
 
+  // twitter
+  "org.twitter4j" % "twitter4j-core" % twitter4jVersion,
+  "org.twitter4j" % "twitter4j-stream" % twitter4jVersion,
+
+  "edu.stanford.nlp" % "stanford-corenlp" % nlpLibVersion,
+  "edu.stanford.nlp" % "stanford-corenlp" % nlpLibVersion classifier "models",
+
   // logging
   "org.apache.logging.log4j" % "log4j-api" % log4jVersion,
   "org.apache.logging.log4j" % "log4j-core" % log4jVersion,
