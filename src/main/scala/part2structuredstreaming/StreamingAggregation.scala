@@ -23,10 +23,11 @@ object StreamingAggregation {
 
   lineCount.writeStream
     .format("console")
-    .outputMode("complete") //append and update are not supported on aggregation without watermark
+    .outputMode("complete")//append and update are not supported on aggregation without watermark
     .start()
     .awaitTermination()
   }
+
   def numericalAggregation(aggFunction:Column=>Column)={
 
     val lines:DataFrame=spark.readStream
@@ -36,8 +37,14 @@ object StreamingAggregation {
       .load()
 
     //aggregate here
-    val numbers=lines.select(col("value").cast("integer").as("number"))
-    val aggegationDF=numbers.select(aggFunction(col("number")).as("agg_so_far"))
+    val numbers=lines
+      .select(col("value")
+        .cast("integer")
+        .as("number"))
+
+    val aggegationDF=numbers
+      .select(aggFunction(col("number"))
+        .as("agg_so_far"))
 
     aggegationDF.writeStream
       .format("console")
