@@ -10,7 +10,7 @@ object ProcessingTimeWindow {
     .master("local[*]")
     .getOrCreate()
   def aggregateByProcessingTime()={
-    val linesCharCountByWinodwDF=spark.readStream
+    val linesCharCountByWindowDF=spark.readStream
       .format("socket")
       .option("host","localhost")
       .option("port",12345)
@@ -24,7 +24,7 @@ object ProcessingTimeWindow {
         col("charCount")
       )
 
-      linesCharCountByWinodwDF.writeStream
+      linesCharCountByWindowDF.writeStream
         .format("console")
         .outputMode("complete")
         .start()
