@@ -67,7 +67,7 @@ import spark.implicits._
       $"tmp".getItem(0).as("so_prefix"),
       $"tmp".getItem(1).as("so_tag"),
     ).drop("tmp")
-  splitColumnDF.show()
+  //splitColumnDF.show()
 
   val donuts=Seq(("plain donut",1.50),("vanilla donut",2.0),("glazed donut",2.50))
   val donutsDF=donuts.toDF("donut_name","donut_price")
