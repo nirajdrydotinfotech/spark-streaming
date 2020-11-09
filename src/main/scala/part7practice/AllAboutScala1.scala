@@ -3,6 +3,9 @@ package part7practice
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.col
 
+/**
+  * basic spark
+  */
 object AllAboutScala1 extends App {
   val spark=SparkSession.builder()
       .appName("allAboutScala practice")
