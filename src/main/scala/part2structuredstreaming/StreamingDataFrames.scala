@@ -74,5 +74,6 @@ object StreamingDataFrames {
 
   def main(args: Array[String]): Unit = {
   //  demoTriggers()
+    readFromFiles()
   }
 }

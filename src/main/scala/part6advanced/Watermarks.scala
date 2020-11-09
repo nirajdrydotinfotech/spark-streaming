@@ -87,7 +87,7 @@ object DataSender{
     printer.println("9000,red") //discarded:older than watermark
     Thread.sleep(3000)
     printer.println("15000,red")
-    printer.println("8000,blue") //discarded:older than watermark
+    printer.println("8000,blue") //discard  ed:older than watermark
     Thread.sleep(1000)
     printer.println("13000,green")
     Thread.sleep(500)
@@ -126,6 +126,7 @@ object DataSender{
     Thread.sleep(2000)
     printer.println("30000,purple")
     printer.println("10000,green")
+
   }
   def main(args: Array[String]): Unit = {
     example1()

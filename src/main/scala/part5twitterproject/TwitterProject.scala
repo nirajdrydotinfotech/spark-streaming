@@ -1,5 +1,4 @@
 package part5twitterproject
-
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.streaming.dstream.DStream
@@ -65,6 +64,6 @@ object TwitterProject {
   }
 
   def main(args: Array[String]): Unit = {
-    readTwitterWithSentiments()
+    readTwitter()
   }
 }
