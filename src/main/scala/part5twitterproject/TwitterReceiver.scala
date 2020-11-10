@@ -7,12 +7,12 @@ import org.apache.spark.streaming.receiver.Receiver
 import twitter4j._
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Promise
+import scala.concurrent.{Future, Promise}
 
 class TwitterReceiver extends Receiver[Status](StorageLevels.MEMORY_ONLY){
 
-  val twitterStreamPromise=Promise[TwitterStream]
-  val twitterStreamFuture=twitterStreamPromise.future
+  val twitterStreamPromise: Promise[TwitterStream] =Promise[TwitterStream]
+  val twitterStreamFuture: Future[TwitterStream] =twitterStreamPromise.future
 
   private def simpleStatusListener=new StatusListener {
     override def onStatus(status: Status): Unit = store(status)
